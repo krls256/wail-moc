@@ -17,9 +17,6 @@ func (p Point) IsEqual(p1 Point) bool {
 func (p Point) Minus(mod *big.Int) Point {
 	nP := p.Copy()
 
-	nP.X.Mul(nP.X, minusOne)
-	nP.X.Mod(nP.X, mod)
-
 	nP.Y.Mul(nP.Y, minusOne)
 	nP.Y.Mod(nP.Y, mod)
 
@@ -61,7 +58,7 @@ func main() {
 	}
 
 	//P, Q := Point{X: big.NewInt(2), Y: big.NewInt(9)}, Point{X: big.NewInt(3), Y: big.NewInt(10)}
-	P, Q := Point{X: big.NewInt(33), Y: big.NewInt(60)}, Point{X: big.NewInt(121), Y: big.NewInt(387)}
+	P, Q := Point{X: big.NewInt(36), Y: big.NewInt(571)}, Point{X: big.NewInt(420), Y: big.NewInt(48)}
 	R := Point{X: big.NewInt(0), Y: big.NewInt(36)}
 
 	minusR := R.Minus(c.Mod)
